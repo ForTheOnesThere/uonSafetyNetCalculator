@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lower Levels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Now onto this year...</h1>
+
+    Did you take any modules this year that are at a lower level than your current stage?
+    <br>
+    If the answer is yes, add them here. When you've added them all, hit 'Continue'.
+    <br>
+    If you didn't take any lower modules, hit 'I did not'.
+    <br><br>
+    <div><form method="post">
+
+      Module Title: <input type="text" id="newModuleTitle" value=""><br><br>
+      Module Credits: <input type="text" id="newModuleCredits" value=""><br><br>
+      Percentage of Module Completed (0-100%): <input type="text" id="newModulePercent" value=""><br><br>
+      Module Grade: <input type="text" id="newModuleGrade" value=""><br><br>
+
+      <input type="button" id="submitButton" value="Add This Module">
+      <input type="button" id="resetButton" value="Start Over">
+      <input type="button" id="continueButton" value="Continue">
+      <br>
+
+    </form></div>
+
+    <input type="button" id="noLowerModules" value="I did not">
+
+    <script type="text/javascript" src="lowerLevel.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+h1 {
+  font-family: 'Indie Flower', cursive;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  top: 15%;
+}
+
+h2 {
+  font-family: 'Indie Flower', cursive;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  top: 15%;
+}
+body {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  background-color: rgb(250, 242, 250);
+}
+
+#chartContainer {
+  background-color: 'red';
+}
