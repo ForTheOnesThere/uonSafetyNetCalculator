@@ -21,6 +21,6 @@ body {
   background-color: rgb(250, 242, 250);
 }
 
-#chartContainer {
+.chartContainer {
   background-color: 'red';
 }

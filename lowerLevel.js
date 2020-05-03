@@ -41,6 +41,8 @@ function addNewModule() {
 
   //adds the new module to the list of stored modules
   appendModuleList(tempModule);
+  let message = "You have added the module: " + tempModule.title + ". You have added " + moduleDatabase.length + " modules so far.";
+  alert(message);
 }
 
 function resetForm(reset) {
@@ -54,6 +56,7 @@ function resetForm(reset) {
   //list of modules entered so far
   if (reset == true){
     moduleDatabase = [];
+    alert("Progress on this page only has been wiped.");
   } else {};
 
 }
