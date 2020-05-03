@@ -47,8 +47,8 @@ document.getElementById('results').innerHTML = "<h2>" + finalMarkRounded + "</h2
 document.getElementById('classification').innerHTML = "<h2>" + classification + "</h2>"
 
 //formats data for later use in the pie chart
-let lastYearCont = ((1-lambda)*100);
-let thisYearCont = lambda*100;
+let lastYearCont = ((1-lambda)*100).toFixed(0);
+let thisYearCont = (lambda*100).toFixed(0);
 let contributions = [thisYearCont, lastYearCont];
 
 // Using chart.js
