@@ -12,11 +12,13 @@ let numberOfCredits = 0;
 let lowerCredits = 0;
 let yearTwoMark = Number(window.localStorage.getItem("yearTwoMark"));
 let yearThreeMark = Number(window.localStorage.getItem("yearThreeMark"));
+let secondYearMark = Number(window.localStorage.yearTwoMark);
+let thirdYearMark = Number(window.localStorage.yearThreeMark);
 
 //functions
 function continueToFinalYear(){
   //saves data that student has no lower modules and moves them on
-  window.localStorage.setItem("formulaC", "0");
+  window.localStorage.setItem("formulaC", (((120*yearTwoMark) + (120*yearThreeMark))/240));
   window.location.href = "finalYear.html";
 }
 
