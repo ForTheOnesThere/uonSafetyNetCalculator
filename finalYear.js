@@ -41,7 +41,7 @@ function addNewModule() {
   //adds the new module to the list of stored modules
   appendModuleList(tempModule);
 
-  let message = "You have added the module: " + tempModule.title + ". You have added " + moduleDatabase.length + " modules so far.";
+  let message = "You have added the module: " + tempModule.title + ". You have added " + moduleDatabase.length + " module(s) so far.";
   alert(message);
 }
 

@@ -3,6 +3,11 @@ let B = Number(window.localStorage.formulaB);
 let C = Number(window.localStorage.formulaC);
 let secondYearMark = Number(window.localStorage.yearTwoMark);
 let thirdYearMark = Number(window.localStorage.yearThreeMark);
+
+//hides the labels on all of the graphs
+Chart.defaults.global.legend.display = false;
+
+
 window.localStorage.clear();
 let canvas = document.getElementById('chartContainer');
 canvas.height = window.innerHeight * 0.5;
@@ -45,13 +50,9 @@ let data = {
         backgroundColor: ['rgba(188, 141, 160, 1)','rgba(173, 188, 165, 1)']
     }
   ],
-
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-        "Contribution of your grades from this year so far",
-        "Contribution of your performance from previous years"
-    ]
-};
+  labels: [
+     "Contribution of your grades from this year so far",
+      "Contribution of your performance from previous years"]};
 
 var myDoughnutChart = new Chart(ctx, {
     type: 'doughnut',
