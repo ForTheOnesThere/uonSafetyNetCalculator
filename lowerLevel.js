@@ -18,7 +18,7 @@ let thirdYearMark = Number(window.localStorage.yearThreeMark);
 //functions
 function continueToFinalYear(){
   //saves data that student has no lower modules and moves them on
-  window.localStorage.setItem("formulaC", (((120*yearTwoMark) + (120*yearThreeMark))/240));
+  window.localStorage.setItem("formulaC", yearThreeMark);
   window.location.href = "finalYear.html";
 }
 
@@ -89,8 +89,8 @@ function findCreditWeightedAverage(){
   for (i=0; i<moduleDatabase.length; i++){
     cont+=moduleDatabase[i].credits*moduleDatabase[i].percent*moduleDatabase[i].grade/100;
     }
-  cont = cont + (120*yearTwoMark) + (120*yearThreeMark);
-  creditWeightedAverage = cont/(lowerCredits+240);
+  cont = cont + (120*yearThreeMark);
+  creditWeightedAverage = cont/(lowerCredits+120);
   formulaC = creditWeightedAverage;
   //save the data for future pages and moves the user on
   window.localStorage.setItem("formulaC",formulaC);
