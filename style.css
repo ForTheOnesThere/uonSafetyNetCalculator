@@ -38,10 +38,18 @@ body {
 
 .buttonSize {
   width: 30vw;
-  height: 5vw;
+  height: 10vh;
+  font-size: 2.5vh;
+  margin-bottom: 2.5em;
 }
 
 .textBoxSize{
-  height: 1.5vh;
+  height: 3vh;
   width: 6vw;
+  font-size: 2.5vh;
+}
+
+.textBoxLong {
+  height: 3vh;
+  font-size: 2.5vh;
 }
