@@ -44,8 +44,8 @@ let lastYearCont = ((1-lambda)*100);
 let thisYearCont = lambda*100;
 let contributions = [thisYearCont, lastYearCont];
 
-document.querySelectorAll('div')[0].innerHTML = "<h2>" + finalMarkRounded + "</h2>"
-document.querySelectorAll('div')[1].innerHTML = "<h2>" + classification + "</h2>"
+document.getElementById('results').innerHTML = "<h2>" + finalMarkRounded + "</h2>"
+document.getElementById('classification').innerHTML = "<h2>" + classification + "</h2>"
 
 // Using chart.js
 // defines the axis range for the bar chart
@@ -86,6 +86,6 @@ let dataBar = {
 
 var ctxBar = document.getElementById('barChartContainer');
 var myBarChart = new Chart(ctxBar, {
-    type: 'bar',
+    type: 'horizontalBar',
     data: dataBar
 });
