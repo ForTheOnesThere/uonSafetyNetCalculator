@@ -1,7 +1,9 @@
+//variables
 var nextButton = document.getElementById("nextButton");
 var secondYear = document.getElementById("yearTwoMark");
 var thirdYear = document.getElementById("yearThreeMark");
 
+//functions
 function savePastPerformance(){
   window.localStorage.setItem("yearTwoMark", secondYear.value);
   window.localStorage.setItem("yearThreeMark", thirdYear.value);
@@ -15,4 +17,5 @@ function goToLowerModules(){
   } else {alert("You must not leave your marks blank!")}
 }
 
+//execute
 nextButton.addEventListener("click", goToLowerModules);
