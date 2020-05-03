@@ -4,13 +4,16 @@ let C = Number(window.localStorage.formulaC);
 let secondYearMark = Number(window.localStorage.yearTwoMark);
 let thirdYearMark = Number(window.localStorage.yearThreeMark);
 window.localStorage.clear();
+let canvas = document.getElementById('chartContainer');
+canvas.height = window.innerHeight * 0.5;
+canvas.width = window.innerWidth;
 
-let lambda = null;
+var lambda = null;
 let finalMark = null;
 let classification = null;
 
 function findSafetyMark(){
-    if (2*A > 120){lambda=1} else {lambda = 2*A/120}
+    if (2*A > 120){lambda=1} else {lambda = (2*A/120).toFixed(1)}
 
     finalMark = (B*lambda) + ((1-lambda)*C);
     finalMarkRounded = finalMark.toFixed(2);
@@ -25,31 +28,32 @@ function findSafetyClassification(){
   else (classification = 'Not reached 2:2')
 }
 
-// using CanvasJS
-window.onload = function() {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-  animationEnabled: true,
-  title: {
-    text: "Mark Breakdown"
-  },
-  data: [{
-    type: "pie",
-    startAngle: 240,
-    yValueFormatString: "##0.00\"%\"",
-    indexLabel: "{label} {y}",
-    dataPoints: [
-      {y: lambda*100, label: "Contribution of your grades from this year so far"},
-      {y: (1-lambda)*100, label: "Contribution of your performance from previous years"}
-    ]
-  }]
-});
-chart.render();
-
-}
-
 findSafetyMark();
 findSafetyClassification();
+let lastYearCont = ((1-lambda)*100);
+let thisYearCont = lambda*100;
+let contributions = [thisYearCont, lastYearCont];
 
 document.querySelectorAll('div')[0].innerHTML = "<h2>" + finalMarkRounded + "</h2>"
 document.querySelectorAll('div')[1].innerHTML = "<h2>" + classification + "</h2>"
+
+// Using chart.js
+var ctx = document.getElementById('chartContainer');
+let data = {
+    datasets: [{
+        data: contributions,
+        backgroundColor: ['rgba(188, 141, 160, 1)','rgba(173, 188, 165, 1)']
+    }
+  ],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        "Contribution of your grades from this year so far",
+        "Contribution of your performance from previous years"
+    ]
+};
+
+var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+});

@@ -96,6 +96,8 @@ function findCreditWeightedAverage(){
   formulaB = creditWeightedAverage;
 }
 
+
+
 addModule.addEventListener("click", addNewModule);
 resetButton.addEventListener("click", function(){resetForm(true)});
 finishButton.addEventListener("click", calculateFinalYearContribution);
